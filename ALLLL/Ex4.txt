@@ -1,0 +1,71 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt 
+from sklearn import linear_model
+from sklearn.model_selection import train_test_split
+
+
+from sklearn.datasets import load_boston
+boston = load_boston()
+print(boston.data.shape)
+
+
+from sklearn.datasets import load_boston
+boston = load_boston()
+print(boston)
+
+
+boston.feature_names
+
+
+boston.target
+
+
+print(boston.data.shape)
+
+
+boston = load_boston()
+print(boston.keys())
+
+
+x = pd.DataFrame(boston.data, columns = boston.feature_names)
+y = pd.DataFrame(boston.target)
+
+
+x.head(10)
+
+y.head(10)
+
+%matplotlib inline
+plt.xlabel('CRIM','ZN','INDUS','CHAS','NOX', 'RM','AGE','DIS','RAD', 'TAX','PTRATIO','B','LSTAT')
+#plt.xlabel('feature_names')
+plt.ylabel('target')
+plt.scatter(boston.'RM'), boston.target,color='red',marker='+')
+
+
+
+reg = linear_model.LinearRegression()
+
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random_state=42)
+
+
+
+
+reg.fit(x_train, y_train)
+
+
+print(reg.coef_)
+
+
+reg.fit(x_train, y_train) 
+print(reg.score(x_test, y_test))
+
+
+
+y_pred = reg.predict(x_test)
+print(y_pred)
+
+
+
+
